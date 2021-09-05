@@ -20,3 +20,14 @@ class Solution(object):
             else:
                 p1 = mid + 1
         return p2
+
+
+def isBadVersion(x, bad_val=4):
+    if x >= bad_val:
+        return True
+    else:
+        return False
+
+
+s = Solution()
+print(s.firstBadVersion(10))
