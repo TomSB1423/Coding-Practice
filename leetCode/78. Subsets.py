@@ -24,4 +24,4 @@ class Solution:
 
 
 s = Solution()
-s.subsets([1, 2, 3, 4, 5])
+s.subsets([1, 2, 3])
