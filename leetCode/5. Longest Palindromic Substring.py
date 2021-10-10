@@ -1,7 +1,7 @@
-# WRONG Will need to redo
-
 class Solution:
-    def longestPalindrome(self, s):
+    def longestPalindrome(self, s: str) -> str:
+        if len(s) <= 1:
+            return s
         maxs = ""
         temp = 0
         for i in range(len(s)-1):
@@ -14,13 +14,13 @@ class Solution:
         return maxs
 
     def go_from_center(self, s, l, r):
-        if l > r:
+        if l > r or s[l] != s[r]:
             return ""
         while l >= 0 and r < len(s) and s[l] == s[r]:
             l -= 1
             r += 1
-        return s[l: r-1]
+        return s[l+1: r]
 
 
 s = Solution()
-print(s.longestPalindrome("babad"))
+print(s.longestPalindrome("cbbd"))
