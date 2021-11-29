@@ -3,7 +3,7 @@ from collections import Counter
 
 x = int(input())
 sizes = Counter(list(map(float, input().split(" "))))
-N = int(input())
+N = int(input()) 
 money = []
 for i in range(N):
     customer = list(map(float, input().split(" ")))  # Shoe size, price

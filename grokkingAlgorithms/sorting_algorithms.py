@@ -105,14 +105,35 @@ def sort_merge(array):
         - Requires extra space ~=N
         - Less efficient
     """
+    def merge(a1, a2):
+        arr = []
+        while a1 and a2:
+            if a1[0] < a2[0]:
+                arr.append(a1[0])
+                a1.pop(0)
+            else:
+                arr.append(a2[0])
+                a2.pop(0)
+        return arr
+
+    if len(array) < 2:
+        return array
+    N = len(array)
+    mid = int(N / 2)
+    left = array[:mid]
+    right = array[mid:N]
+    sort_merge(left)
+    sort_merge(right)
+
+    merge(left, right)
 
     return array
 
 
-my_array = [10, 5, 3, 8, 6, 9, 2]
+my_array = [10, 5, 3, 8, 6, 9]
 print("Unsorted array:", my_array)
 # print(sort_bubble(my_array))
 # print(sort_insertion(my_array))
 # print(sort_quick(my_array))
-print(sort_heap(my_array))
-# print(sort_merge(my_array))
+# print(sort_heap(my_array))
+print(sort_merge(my_array))
